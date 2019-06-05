@@ -2,6 +2,8 @@ package br.com.juaanhs.facebookfeed;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,9 +50,16 @@ public class MainActivity extends AppCompatActivity {
         post1.setTextViewTitle("gameofthrones.com".toUpperCase());
         post1.setTextViewSubtitle("Game of Thornes is an American fantasy drama television series created by David Benioff and D. B. Weiss. It is an adaptation ");
         posts.add(post1);
-        posts.add(post1);
-        posts.add(post1);
-        posts.add(post1);
+
+
+        Post post2 = new Post();
+        post2.setImageViewUser(R.drawable.red_queen);
+        post2.setImageViewPost(R.drawable.post_2);
+        post2.setTextViewUserName("Melisandre");
+        post2.setTextViewTime("5 min");
+        post2.setTextViewContent("No matter what Ygritte says, Jon Snow knows a few things. The bastard son of Ned Stark (or is he?) grew up in a house-hold where he was welcomed by Ned and his half-siblings but not so much by Catelyn Stark. When the opportunity came to join the Night's Watch at Castle Black, he saw");
+        posts.add(post2);
+
 
         postAdapter.setPosts(posts);
         postAdapter.notifyDataSetChanged();
@@ -86,6 +95,19 @@ public class MainActivity extends AppCompatActivity {
             textViewContent.setText(post.getTextViewContent());
             textViewTitle.setText(post.getTextViewTitle());
             textViewSubtitle.setText(post.getTextViewSubtitle());
+            if(post.getTextViewTitle() == null) {
+                itemView.findViewById(R.id.post_container).setVisibility(View.GONE);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout) itemView);
+                constraintSet.setDimensionRatio(R.id.image_view_post,"1:1");
+                constraintSet.applyTo((ConstraintLayout) itemView);
+            } else {
+                itemView.findViewById(R.id.post_container).setVisibility(View.VISIBLE);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout) itemView);
+                constraintSet.setDimensionRatio(R.id.image_view_post,"16:9");
+                constraintSet.applyTo((ConstraintLayout) itemView);
+            }
         }
     }
 
