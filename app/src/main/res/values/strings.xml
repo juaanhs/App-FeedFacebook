@@ -4,4 +4,9 @@
     <string name="comment">Comment</string>
     <string name="share">Share</string>
     <string name="search">Search</string>
+    <string name="foto">TODO</string>
+    <string name="mensagens">mensagens</string>
+    <string name="opcoes">opcoes</string>
+    <string name="globo">globo</string>
+    <string name="imagem_post">imagemPost</string>
 </resources>

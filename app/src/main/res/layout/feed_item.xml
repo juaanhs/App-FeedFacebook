@@ -41,7 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/text_view_user_name"
         app:srcCompat="@drawable/ic_more_horiz_black_24dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/opcoes" />
 
     <TextView
         android:id="@+id/textView_time"
@@ -64,7 +65,8 @@
         android:tint="@color/lightGray"
         app:layout_constraintBottom_toBottomOf="@id/textView_time"
         app:layout_constraintStart_toEndOf="@id/textView_time"
-        app:layout_constraintTop_toTopOf="@id/textView_time"/>
+        app:layout_constraintTop_toTopOf="@id/textView_time"
+        android:contentDescription="@string/globo" />
 
     <TextView
         android:id="@+id/text_view_content"
@@ -89,7 +91,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_view_content"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
-        app:layout_constraintDimensionRatio="16:9"/>
+        app:layout_constraintDimensionRatio="16:9"
+        android:contentDescription="@string/imagem_post" />
     
     <LinearLayout
         android:id="@+id/post_container"
